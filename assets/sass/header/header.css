@@ -2463,7 +2463,7 @@ header::before {
   position: absolute;
   content: "";
   height: 0;
-  background: var(--secondary);
+  background: linear-gradient(90deg, #002B10 0%, #1B5530 100%);
   left: 0;
   right: 0;
   top: 0;

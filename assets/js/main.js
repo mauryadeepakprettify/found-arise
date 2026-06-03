@@ -1,27 +1,49 @@
-
-
 // ---- Modal ----
-function openModel(selector) {
-    document
-        .querySelectorAll(".modal.is-open, .overlay.is-open")
-        .forEach((el) => el.classList.remove("is-open"));
+document.querySelectorAll("[data-modal]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    openModel(`.${btn.dataset.modal}`);
 
-    const modal = document.querySelector(selector);
-    const overlay = document.querySelector(".overlay");
+    const modalId = btn.dataset.modal;
 
-    if (modal) modal.classList.add("is-open");
-    if (overlay) overlay.classList.add("is-open");
+    if (modalId === "video-modal") {
+      const modalVideo = btn.dataset.video;
 
-    document.body.classList.add("no-scroll");
-}
+      const videoEl = document.getElementById("iframe1");
+      videoEl.src = modalVideo;
+    }
+  });
+});
 
-function closeModel() {
-    document
-        .querySelectorAll(".modal.is-open, .overlay.is-open")
-        .forEach((el) => el.classList.remove("is-open"));
+// ---- Close Modal ----
+document.querySelectorAll(".overlay, .close").forEach((el) => {
+  el.addEventListener("click", closeModel);
 
-    document.body.classList.remove("no-scroll");
-}
+  const isVideoModal = el.closest(".video-modal");
+  if (isVideoModal) {
+    document.getElementById("iframe1").src = "";
+  }
+});
+
+// ---- Accordion ----
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", () => {
+    const parent = header.closest(".accordion");
+    document.querySelectorAll(".accordion").forEach((acc) => {
+      if (acc !== parent) {
+        acc.classList.remove("open");
+        const t = acc.querySelector(".toggle");
+        if (t) t.innerHTML = '<img src="assets/icon/plus.svg" alt="">';
+      }
+    });
+    parent.classList.toggle("open");
+    const toggle = header.querySelector(".toggle");
+    if (toggle)
+      toggle.innerHTML = parent.classList.contains("open")
+        ? '<img src="assets/icon/minus.svg" alt="">'
+        : '<img src="assets/icon/plus.svg" alt="">';
+  });
+});
+
 
 //scroll body add class
 window.addEventListener("scroll", () => {

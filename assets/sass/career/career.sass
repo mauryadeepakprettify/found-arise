@@ -1,0 +1,220 @@
+@import "../_common"
+
+.career-secA
+    height: calc(549px - var(--headerheight))
+    background: var(--background)
+    padding-top: var(--headerheight)
+    .container
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        h1
+            text-align: center
+            font-size: 60px
+            line-height: 1.2
+            font-family: $Fraunces
+            @include font(300)
+            margin-bottom: 14px
+        p
+            color: $text
+            max-width: 441px
+            text-align: center
+            font-family: $Fraunces
+            @include font(300)
+        .form
+            margin-top: 32px
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 18px
+            .search-field
+                border: 1px solid rgba(235, 235, 235, 1)
+                background: $white
+                border-radius: 10px
+                padding: 12px 20px
+                width: 379px
+                display: flex
+                align-items: center
+                gap: 10px
+                .icon
+                    width: 20px
+                    height: 20px
+                input
+                    outline: 0
+                    border: 0
+                    font-family: $Poppins
+                    @include font(400)
+                    color: $text
+                    flex: 1
+                .close
+                    display: none
+                    &.is-text
+                        display: block
+                    img
+                        width: 20px
+                        height: 20px
+
+.career-secB
+    padding: 50px var(--containerfluid)
+    .container
+        display: grid
+        grid-template-columns: 278px 1fr
+        gap: 42px
+        .left
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25)
+            border-radius: 5px
+            overflow: hidden
+            height: fit-content
+            position: sticky
+            top: calc(var(--headerheight) + 50px)
+            .accordion
+                &.open
+                    .accordion-header
+                        background: $secondary
+                        span
+                            &:nth-of-type(1)
+                                color: white     
+                .accordion-header
+                    padding: 4px 16px
+                    transition: all .3s ease-in-out
+                    span
+                        font-family: $Poppins
+                        &:nth-of-type(2)
+                            img
+                                width: 24px
+                .accordion-content
+                    .content
+                        padding: 0 10px 
+                        .search-bar
+                            border-bottom: 1px solid rgba(102, 102, 102, 0.44)
+                            padding: 10px 0px
+                            display: flex
+                            align-items: center
+                            gap: 14px
+                            .icon
+                                width: 20px
+                                height: 20px
+                            input
+                                outline: 0
+                                border: 0
+                                font-family: $Poppins
+                                @include font(400)
+                                color: $text
+                                flex: 1
+                        .search-list
+                            margin-top: 16px
+                            ul
+                                li
+                                    &:not(:last-child)
+                                        margin-bottom: 8px
+                                    label
+                                        font-family: $Poppins
+
+                                        font-size: 14px
+                                        color: $text
+                                        cursor: pointer
+                                        display: flex
+                                        justify-content: start
+                                        gap: 10px
+                                        align-items: center
+                                        input[type="checkbox"]
+                                            appearance: none
+                                            -webkit-appearance: none
+                                            -moz-appearance: none
+                                            width: 20px
+                                            height: 20px
+                                            border-radius: 5px
+                                            outline: none
+                                            cursor: pointer
+                                            position: relative
+                                            transition: all .3s ease-in-out
+                                            background: rgba(217, 217, 217, 1)
+                                            &::after
+                                                content: "✓"
+                                                position: absolute
+                                                top: 50%
+                                                left: 50%
+                                                transform: translate(-50%, -50%)
+                                                font-weight: 800
+                                                opacity: 0
+                                                color: white
+                                                transition: all .3s ease-in-out
+                                            &:checked
+                                                background: $secondary
+                                                &::after
+                                                    opacity: 1
+
+                                        
+
+
+
+
+
+        .right
+            .result-count
+                margin-bottom: 8px
+                h4
+                    font-family: $Poppins
+                    font-size: 20px
+                    @include font(500)
+            .result-filters
+                ul
+                    display: flex
+                    align-items: center
+                    flex-wrap: wrap
+                    gap: 8px
+                    li
+                        &:not(:last-child)     
+                            font-size: 14px
+                            color: $text
+                            background: rgba(245, 245, 245, 1)
+                            padding: 5px 12px
+                            border-radius: 5px
+                            display: flex
+                            justify-content: center
+                            gap: 10px
+                            align-items: center
+                            .close
+                                height: fit-content
+                                img
+                                    vertical-align: middle
+                        &:last-child
+                            color: $secondary
+                            margin-left: 14px
+                            cursor: pointer
+            .result-list
+                margin-top: 24px
+                .item
+                    border: 1px solid rgba(217, 217, 217, 1)
+                    padding: 24px
+                    display: grid
+                    grid-template-columns: 1fr 156px
+                    gap: 50px
+                    &:not(:last-child)
+                        margin-bottom: 24px
+                    .col-a
+                        h3
+                            font-family: $Poppins
+                            font-size: 20px
+                            line-height: 24px
+                            @include font(500)
+                            margin-bottom: 12px
+                        ul
+                            display: flex
+                            gap: 24px
+                            li
+                                display: flex
+                                gap: 10px
+                                font-size: 12px
+                                line-height: 24px
+                                color: $primary
+                                font-family: $Poppins
+                                @include font(500)
+                                img
+                                    width: 24px
+                        p
+                            margin-top: 16px
+                            color: $text
+                            font-family: $Poppins

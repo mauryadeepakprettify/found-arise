@@ -30,15 +30,14 @@
         .content
             margin-top: 50px
             display: flex
-            gap: 50px
             .txt-card
                 flex: 0 1 15%
                 display: flex
                 height: fit-content
-                transition: all .8s ease
+                transition: flex 1s ease
                 gap: 32px
                 span
-                    transition: all .5s ease
+                    transition: all 1s ease
                     color: white
                     -webkit-text-stroke: 2px #1B553066
                     font-family: $Poppins
@@ -55,17 +54,19 @@
                     p
                         text-align: justify
                         color: $text
-
+                &:not(:last-child)
+                    .info
+                        padding-right: 50px
                 &.active
                     flex: 0 1 70%
                     span
                         color: var(--secondary)
                     .info
-                        transition: opacity 1s ease-in-out
                         height: 200px
                         width: auto
                         opacity: 1
                         pointer-events: auto
+                        transition: opacity 2s ease-in-out
 
 .secB
     padding: 60px var(--containerfluid)
@@ -660,16 +661,20 @@
                     align-items: center
                     gap: 26px
 
-
 .secJ
     padding: 80px var(--containerfluid)
     background-color: var(--background)
-    background-image: url("../../vector/street.svg")
-    background-position: center
-    background-size: cover
-    background-repeat: no-repeat
     position: relative
     overflow: hidden
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        background-image: url("../../vector/street.svg")
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        opacity: .5
     &::before
         content: ""
         width: 891px
@@ -679,8 +684,8 @@
         left: 50%
         top: 50%
         transform: translate(-50%, -50%)
-        background-color: rgba(245, 240, 230, .8)
-        backdrop-filter: blur(70px)
+        background: rgba(245, 240, 230, 1)
+        backdrop-filter: blur(20px)
         opacity: 1
         z-index: 1
     .container
@@ -708,7 +713,6 @@
                     opacity: 1
                     outline: 1px solid $secondary
                     outline-offset: 5px
-
 
         .secj-slider
             height: 480px
