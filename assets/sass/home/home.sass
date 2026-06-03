@@ -1,0 +1,738 @@
+@import  "../_common"
+
+.banner
+    .banner-wrapper
+        .content
+            h1
+                max-width: 647px
+                margin: 0 auto 18px
+            .btn
+                margin: 18px auto 0
+
+.secA
+    padding: 60px var(--containerfluid) 260px
+    background: linear-gradient(180deg, #FFFFFF 25%, #F9F6F0 100%)
+    position: relative
+    &::before
+        content: " "
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background: url('../../vector/skyline.svg') 100% 100% /contain no-repeat
+        z-index: 1
+    .container
+        z-index: 2
+        position: relative
+        max-width: 1042px
+        .content
+            margin-top: 50px
+            display: flex
+            gap: 50px
+            .txt-card
+                flex: 0 1 15%
+                display: flex
+                height: fit-content
+                transition: all .8s ease
+                gap: 32px
+                span
+                    transition: all .5s ease
+                    color: white
+                    -webkit-text-stroke: 2px #1B553066
+                    font-family: $Poppins
+                    font-size: 200px
+                    @include  font(600)
+                    line-height: 1
+                .info
+                    opacity: 0
+                    pointer-events: none
+                    width: 0
+                    height: 0
+                    padding-top: 20px
+                    overflow: hidden
+                    p
+                        text-align: justify
+                        color: $text
+
+                &.active
+                    flex: 0 1 70%
+                    span
+                        color: var(--secondary)
+                    .info
+                        transition: opacity 1s ease-in-out
+                        height: 200px
+                        width: auto
+                        opacity: 1
+                        pointer-events: auto
+
+.secB
+    padding: 60px var(--containerfluid)
+    .container
+        .heading
+            margin: 0 auto
+            max-width: 765px
+        .content
+            margin-top: 60px
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            gap: 16px
+            figure
+                height: 400px
+                position: relative
+                overflow: hidden
+                &::before
+                    content: " "
+                    position: absolute
+                    inset: 0
+                    background: linear-gradient(360deg, rgba(0, 0, 0, 0.65) 0%, rgba(6, 6, 6, 0) 100%)
+                    z-index: 1
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                figcaption
+                    position: absolute
+                    z-index: 2
+                    left: 36px
+                    right: 36px
+                    bottom: 36px
+                    height: 56px
+                    overflow: hidden
+                    transition: height 0.5s ease-in-out
+                    h3
+                        font-family: $Fraunces
+                        font-size: 24px
+                        line-height: 30px
+                        color: $white
+                        max-width: 302px
+                        margin-bottom: 40px
+                        position: relative
+                        &::before
+                            content: " "
+                            position: absolute
+                            height: 4px
+                            width: 62px
+                            background: #F2D170
+                            bottom: -22px
+                    p
+                        font-size: 14px
+                        color: $white
+                        font-family: $Poppins
+                &:hover
+                    figcaption
+                        height: 200px
+                        transition: height 0.5s ease-in-out
+                .tag
+                    position: absolute
+                    left: 36px
+                    right: 36px
+                    top: 36px
+                    font-size: 14px
+                    line-height: 20px
+                    color: $white
+                    font-family: $Poppins
+                    z-index: 2
+
+.secC
+    padding: 60px var(--containerfluid) 88px
+    background: var(--background)
+    .container
+        position: relative
+        max-width: 1024px
+        &::before
+            content: ""
+            position: absolute
+            bottom: -88px
+            left: 0
+            width: 437px
+            height: 114px
+            background: url('../../vector/up.svg')
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+        .content
+            margin-top: 60px
+            display: grid
+            grid-template-columns: 400px 1fr
+            gap: 80px
+            .left
+                position: relative
+                z-index: 2
+                &::before
+                    content: ""
+                    width: 100%
+                    height: 100%
+                    position: absolute
+                    z-index: 1
+                    background: var(--primary)
+                    right: -6px
+                    top: 0
+                    border-radius: 50%
+                    height: 389px
+                    width: 389px
+                .secc-slider
+                    height: 389px
+                    width: 389px
+                    border-radius: 50%
+                    overflow: hidden
+                    .swiper-wrapper
+                        .swiper-slide
+                            figure
+                                height: 100%
+                                width: 100%
+                                position: relative
+                                img
+                                    height: 100%
+                                    width: 100%
+                                    object-fit: cover
+                                    z-index: 3
+                                    position: relative
+            .right
+                padding-top: 50px
+                .secc-slider
+                    height: 221px
+                    margin-bottom: 24px
+                    overflow: hidden
+                    .swiper-wrapper
+                        .swiper-slide
+                            figcaption
+                                h3
+                                    font-family: $Fraunces
+                                    font-size: 30px
+                                    line-height: 36px
+                                    font-weight: 400
+                                    color: $black
+                                    max-width: 250px
+                                    margin-bottom: 18px
+                                p
+                                    font-size: 16px
+                                    color: $text
+                                    line-height: 24px
+                                    max-width: 380px
+        .counter
+            height: 140px
+            width: 154px
+            position: absolute
+            right: -100px
+            bottom: 0
+            .secc-slider
+                height: 140px
+                overflow: hidden
+                .swiper-wrapper
+                    .swiper-slide
+                        span
+                            font-family: $Fraunces
+                            font-size: 128px
+                            line-height: 140px
+                            font-weight: 400
+                            color: #C3973933
+        .secc-pagination
+            position: absolute
+            top: 58%
+            transform: translaterY(-50%)
+            right: -50px
+            &::before
+                content: ""
+                position: absolute
+                width: 1px
+                height: calc(100% + 40px)
+                background: var(--primary)
+                top: -20px
+                left: 50%
+                transform: translateX(-50%)
+                z-index: 1
+            .swiper-pagination-bullet
+                z-index: 2
+                opacity: 1
+                position: relative
+                background: var(--background) 
+                border: 1px solid var(--primary) 
+                margin: 0 0  14px  0
+                transition: all .5s ease
+                &.swiper-pagination-bullet-active
+                    background: var(--primary)
+
+.secD
+    position: relative
+
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2925) 100%)
+        z-index: 1
+    video
+        display: block
+        width: 100%
+        height: 100%
+        overflow: hidden
+        max-height: 715px
+        object-fit: cover
+    .container
+        padding: 0 var(--containerfluid)
+        z-index: 2
+        position: absolute
+        top: 80px
+        left: 50%
+        transform: translate(-50%, 0)
+        .heading
+            h6, h2
+                color: white
+        .content
+            margin-top: 22%
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            gap: 50px
+            .stat-card
+                h4
+                    font-size: 50px
+                    font-weight: 400
+                    text-align: center
+                    font-family: $Fraunces
+                    color: $white
+                    margin-bottom: 6px
+                p
+                    font-size: 14px
+                    line-height: 24px
+                    text-transform: uppercase
+                    color: $white
+                    text-align: center
+        .note
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            background: $secondary
+            padding: 20px
+            position: absolute
+            bottom: -40%
+            .left
+                border-right: 1px solid $white
+                padding: 0 40px
+                h3
+                    font-size: 24px
+                    font-family: $Fraunces
+                    line-height: 28px
+                    color: $white
+                p
+                    font-size: 14px
+                    color: $white
+
+            .right
+                padding: 0 40px
+                h5
+                    color: white
+                    font-size: 16px
+                    line-height: 24px
+                    text-transform: uppercase
+                    @include  font(600)
+                    font-family: $Poppins
+                    margin-bottom: 1px
+                p
+                    font-size: 14px
+                    line-height: 18px
+                    text-transform: uppercase
+                    letter-spacing: 1px
+                    color: white
+                    font-family: $Poppins
+
+.secE
+    padding: 130px var(--containerfluid) 60px
+    .container
+        .heading
+            p
+                max-width: 592px
+                color: $text
+        .content
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            margin-top: 50px
+            .edge-card
+                border: 1px solid #E5D2AB
+                padding: 20px 28px
+                transition: all 0.5s ease-in-out
+                &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3)
+                    border-bottom: 0
+                &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(5)
+                    border-right: 0
+
+                &:hover
+                    background: #EDE5D3
+                span
+                    font-size: 40px
+                    font-family: $Fraunces
+                    color: #C3973933
+                    display: block
+                    text-align: right
+                h4
+                    font-size: 24px
+                    line-height: 24px
+                    @include font(400)
+                    margin: 12px 0 14px
+                p
+                    font-size: 14px
+                    line-height: 20px
+                    color: $text
+
+.secF
+    background: $secondary
+    padding: 60px var(--containerfluid)
+    .container
+        .heading
+            h6, h2
+                color: $white
+        .content
+            margin-top: 50px
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            position: relative
+            &::before
+                content: "VS"
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translateY(-50%) translateX(-50%)
+                font-size: 150px
+                font-family: $Fraunces
+                color: white
+                font-size: 25px
+                line-height: 28px
+                background: $primary
+                width: 79px
+                height: 79px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+            .left, .right
+                p
+                    font-size: 20px
+                    line-height: 28px
+                    font-family: $Fraunces
+                    color: $white
+                    &:not(:last-child)
+                        margin-bottom: 50px
+            .left
+                text-align: right
+                padding-right: 120px
+                border-right: 1px solid $primary
+                p
+
+                    @include font(300)
+                    font-style: italic
+                    text-decoration: line-through
+                    text-decoration-thickness: 1px
+                    max-width: 300px
+                    margin: 0 0 50px auto
+            .right
+                padding-left: 120px
+                p
+                    max-width: 322px
+                    span
+                        color: $primary
+                        font-style: italic
+
+        .btn
+            margin: 50px auto 0
+            width: fit-content
+
+.secG
+    padding: 80px var(--containerfluid)
+    position: relative
+    overflow: hidden
+    video
+        position: absolute
+        inset: 0
+        z-index: 1
+        width: 100%
+        height: 100%
+        object-fit: cover
+        opacity: .3
+    .container
+        z-index: 2
+        position: relative
+        .heading
+            p
+                max-width: 592px
+        .content
+            position: relative
+            margin-top: 60px
+            .swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .code-card
+                            border: 1px solid
+                            border-image-source: linear-gradient(360deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.06) 100%)
+                            border-image-slice: 1
+                            padding: 42px
+                            background: #FFFFFF66
+                            backdrop-filter: blur(10)
+                            img
+                                width: 54px
+                                height: 54px
+                                margin: 0 auto
+                                display: block
+                            h5
+                                font-size: 20px
+                                font-family: $Fraunces
+                                line-height: 24px
+                                @include font(400)
+                                margin: 16px 0
+                                text-align: center
+                            p
+                                font-size: 16px
+                                color: $text
+                                line-height: 24px
+                                text-align: center
+
+.secH
+    padding: 80px var(--containerfluid)
+    background: $secondary
+    .container
+        .heading
+            h6, h2
+                color: $white
+            h2
+                max-width: 450px
+                margin: 0 auto
+        .content
+            margin-top: 80px
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            .item
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                color: #FFFFFF66
+                padding: 52px
+                border-right: 1px solid #FFFFFF1A
+                border-bottom: 1px solid #FFFFFF1A
+                &::before
+                    opacity: 0
+                    content: ""
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                    width: 182px
+                    height: 93px
+                    border-radius: 50%
+                    background: radial-gradient(
+                        ellipse at center,
+                        rgba(225, 255, 91, 0.18) 0%,
+                        rgba(145, 255, 91, 0.10) 45%,
+                        rgba(145, 255, 91, 0) 100%
+                    )
+                    transition: all 0.5s ease
+                    filter: blur(24px)
+                    pointer-events: none
+                    z-index: 0
+                &:nth-child(4n)
+                    border-right: none
+                &:nth-last-child(-n + 4)
+                    border-bottom: none
+                &:hover
+                    &::before
+                        opacity: 1
+                    p
+                        color: $white
+                *
+                    position: relative
+                    z-index: 1
+                p
+                    transition: all .5s ease-in
+                    font-size: 16px
+                    line-height: 24px
+                    @include font(400)
+
+.secI
+    padding: 60px var(--containerfluid) 120px
+    .container
+        .content
+            margin-top: 60px
+            .tabs
+                display: flex
+                align-items: center
+                padding-bottom: 24px
+                border-bottom: 1px solid #C2C2C266
+                li
+                    cursor: pointer
+                    font-size: 16px
+                    line-height: 22px
+                    @include font(500)
+                    color: #00000033
+                    padding: 5px 40px
+                    text-align: center
+                    position: relative
+                    &:not(:last-child)
+                        border-right: 1px solid #C2C2C266
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        right: 0
+                        height: 2px
+                        background: $primary
+                        bottom: -25px
+                        width: 0
+                        transition: all 0.5s ease-in-out
+                    &.active
+                        color: $primary
+                        &::before
+                            width: 100%
+            .content
+                margin-top: 50px
+                position: relative
+                .secia-slider
+                    overflow: hidden
+                    .swiper-wrapper
+                        .swiper-slide
+                            figure
+                                img
+                                    width: 100%
+                                    object-fit: cover
+                .secib-slider
+                    position: absolute
+                    left: 100px
+                    width: 393px
+                    height: 290px
+                    bottom: -32px
+                    background: linear-gradient(90deg, #FFFFFF 40.71%, #EBEBEB 100%)
+                    border: 1px solid #E5E5E5
+                    overflow: hidden
+                    box-shadow: 0px 7px 29px 0px #64646F33
+                    z-index: 1
+                    .swiper-wrapper
+                        .swiper-slide
+                            figcaption
+                                height: 290px
+                                padding: 40px 30px 40px 30px
+                                h4
+                                    color: $secondary
+                                    font-size: 24px
+                                    margin-bottom: 24px
+                                    position: relative
+                                    &::before
+                                        content: " "
+                                        position: absolute
+                                        bottom: -8px
+                                        width: 50px
+                                        height: 1px
+                                        left: 0
+                                        background: $secondary
+                                p
+                                    color: $text
+                                    font-size: 16px
+                                    line-height: 24px
+                                    @include font(400)
+
+.secK
+    padding: 60px var(--containerfluid)
+    .container
+        .content
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 200px
+            .left
+                display: flex
+                flex-direction: column
+                justify-content: center
+                .heading
+                    h6, h2, p
+                        text-align: left
+                    h2
+                        margin-bottom: 32px
+                    p
+                        margin: 0
+                        max-width: none
+                        &:not(:last-child)
+                            margin-bottom: 10px
+            .right
+                .form
+                    box-shadow: 0px 8px 24px 0px #959DA533
+                    border-radius: 10px
+                    overflow: hidden
+                    padding: 52px
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    gap: 26px
+
+
+.secJ
+    padding: 80px var(--containerfluid)
+    background-color: var(--background)
+    background-image: url("../../vector/street.svg")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        width: 891px
+        height: 891px
+        position: absolute
+        border-radius: 50%
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        background-color: rgba(245, 240, 230, .8)
+        backdrop-filter: blur(70px)
+        opacity: 1
+        z-index: 1
+    .container
+        z-index: 2
+        position: relative
+        .heading
+            h2
+                max-width: 578px
+                margin: 0 auto 20px
+            p
+                max-width: 591px
+        .secj-pagination
+            position: absolute
+            top: 68%
+            transform: translateY(-50%)
+            right: 0
+            .swiper-pagination-bullet
+                width: 9px
+                height: 9px
+                background: $secondary
+                margin: 20px 0px
+                opacity: .5
+                transition: all .5s ease-in-out
+                &.swiper-pagination-bullet-active
+                    opacity: 1
+                    outline: 1px solid $secondary
+                    outline-offset: 5px
+
+
+        .secj-slider
+            height: 480px
+            margin:  70px auto 0 auto
+            max-width: 538px
+            overflow: hidden
+            padding-top: 120px
+            .swiper-wrapper
+                .swiper-slide
+                    transform: scale(.8)
+                    opacity: 0
+                    transition: all .5s ease-in-out
+                    z-index: 1
+                    .inquiry-card
+                        padding: 70px 50px
+                        background-color: $secondary
+                        border-radius: 10px
+                        p
+                            color: $white
+                            opacity: 70%
+                    &.swiper-slide-active
+                        transform: scale(1)
+                        opacity: 1
+                        z-index: 4
+                    &.swiper-slide-prev, &.swiper-slide-next
+                        opacity: .4
+

@@ -1,0 +1,457 @@
+@import './_var'
+
+.form
+    --inputsize: 42px
+    --labelbefore: var(--text)
+    --labelafter: var(--text)
+    --borderbefore: var(--text)
+    --borderafter: var(--primary)
+    --labelfontbefore: 14px
+    --labelfontafter: 12px
+    --font: 500
+    --color: var(--text)
+    --borderwidth: 1px
+    --labelbackground: none
+    --font: normal
+    --textareaheight: 62px
+    --paddingleftright: 0px
+    .form-group
+        position: relative
+        flex: 0 1 100%
+        max-width: 100%
+        width: 100%
+        --selectheight: var(--inputsize)
+        line-height: 0
+        &.has-icon
+            input
+                --iconsize: 26px
+                background-repeat: no-repeat
+                background-size: var(--iconsize)
+            &:not(.icon-left)
+                input
+                    background-position: calc(100% - var(--paddingleftright, 0px)) 50%
+                    padding-right: calc(var(--paddingleftright,0px) + var(--iconsize,0px) + var(--paddingleftright,0px))
+            &.icon-left
+                input
+                    background-position: var(--paddingleftright, 0px) 50%
+                    padding-left: calc(var(--paddingleftright,0px) + var(--iconsize,0px) + 10px)
+            &.calender-icon
+                input
+                    background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M17.5 2H14.5V0.5C14.5 0.367392 14.4473 0.240215 14.3536 0.146447C14.2598 0.0526785 14.1326 0 14 0C13.8674 0 13.7402 0.0526785 13.6464 0.146447C13.5527 0.240215 13.5 0.367392 13.5 0.5V2H6.5V0.5C6.5 0.367392 6.44732 0.240215 6.35355 0.146447C6.25979 0.0526785 6.13261 0 6 0C5.86739 0 5.74021 0.0526785 5.64645 0.146447C5.55268 0.240215 5.5 0.367392 5.5 0.5V2H2.5C1.8372 2.00079 1.20178 2.26444 0.73311 2.73311C0.264441 3.20178 0.000793929 3.8372 0 4.5V17.5C0.000793929 18.1628 0.264441 18.7982 0.73311 19.2669C1.20178 19.7356 1.8372 19.9992 2.5 20H17.5C18.163 20 18.7989 19.7366 19.2678 19.2678C19.7366 18.7989 20 18.163 20 17.5V4.5C20 3.83696 19.7366 3.20107 19.2678 2.73223C18.7989 2.26339 18.163 2 17.5 2ZM19 17.5C19 17.8978 18.842 18.2794 18.5607 18.5607C18.2794 18.842 17.8978 19 17.5 19H2.5C2.10218 19 1.72064 18.842 1.43934 18.5607C1.15804 18.2794 1 17.8978 1 17.5V9H19V17.5ZM19 8H1V4.5C1 3.672 1.67 3 2.5 3H5.5V4.5C5.5 4.63261 5.55268 4.75979 5.64645 4.85355C5.74021 4.94732 5.86739 5 6 5C6.13261 5 6.25979 4.94732 6.35355 4.85355C6.44732 4.75979 6.5 4.63261 6.5 4.5V3H13.5V4.5C13.5 4.63261 13.5527 4.75979 13.6464 4.85355C13.7402 4.94732 13.8674 5 14 5C14.1326 5 14.2598 4.94732 14.3536 4.85355C14.4473 4.75979 14.5 4.63261 14.5 4.5V3H17.5C17.8978 3 18.2794 3.15804 18.5607 3.43934C18.842 3.72064 19 4.10218 19 4.5V8Z" fill="%23666666" fill-opacity="0.7"/%3E%3C/svg%3E')
+            &.search-icon
+                input
+                    --iconsize: 18px
+                    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.893 13.92L16.973 17M16 8.5C16 10.4891 15.2098 12.3968 13.8033 13.8033C12.3968 15.2098 10.4891 16 8.5 16C6.51088 16 4.60322 15.2098 3.1967 13.8033C1.79018 12.3968 1 10.4891 1 8.5C1 6.51088 1.79018 4.60322 3.1967 3.1967C4.60322 1.79018 6.51088 1 8.5 1C10.4891 1 12.3968 1.79018 13.8033 3.1967C15.2098 4.60322 16 6.51088 16 8.5Z' stroke='%23939393' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+            &.user-icon
+                input
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23666666' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M5 20v-1a7 7 0 0 1 7-7v0a7 7 0 0 1 7 7v1m-7-8a4 4 0 1 0 0-8a4 4 0 0 0 0 8'/%3E%3C/svg%3E")
+            &.password-icon
+                input
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23666666' d='M3 8.5a1 1 0 1 0 0-2a1 1 0 0 0 0 2'/%3E%3Cpath fill='%23666666' fill-rule='evenodd' d='M4.5 3c1.56 0 2.94.794 3.75 2h5.26a1 1 0 0 1 .807.409l1.49 2.04a.99.99 0 0 1 .033 1.13l-1.26 1.95a.997.997 0 0 1-1.41.276L12.02 10l-1.19.812a1 1 0 0 1-1.13 0L8.51 10h-.258c-.808 1.21-2.18 2-3.75 2a4.5 4.5 0 0 1 0-9zm3.75 6a1 1 0 0 0-.832.444a3.5 3.5 0 0 1-2.91 1.56c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5c1.21 0 2.28.616 2.91 1.56c.186.277.498.444.832.444h5.26L15 8.048l-1.26 1.95l-1.15-.805a1 1 0 0 0-1.14-.005L10.26 10l-1.19-.812a1 1 0 0 0-.566-.175h-.258z' clip-rule='evenodd'/%3E%3C/svg%3E")
+        &.active
+            &::after
+                width: 100%
+        &:has(input[disabled])
+            --paddingleftright: 10px
+            --color: var(--text)
+            &::after,&::before
+                display: none
+            input
+                user-select: none
+                caret-color: transparent
+                border: 1px solid #ededed
+                border-radius: 5px !important
+                cursor: no-drop
+                background: #f5f5f5
+        &::before,&::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            height: var(--borderwidth)
+            transition: .5s ease
+        &::before
+            background: var(--borderbefore)
+        &::after
+            width: 0
+            background: var(--borderafter)
+        label
+            font-weight: var(--font)
+            position: absolute
+            top: calc((var(--inputsize) / 2) - (var(--labelfontbefore) / 2))
+            left: var(--paddingleftright)
+            color: var(--labelbefore)
+            line-height: 1
+            width: 100%
+            font-size: var(--labelfontbefore)
+            background: var(--labelbackground)
+            font-family: $Poppins
+            transition: .5s ease
+            user-select: none
+            font-size: 16px
+            pointer-events: none
+        input,textarea
+            height: calc(var(--inputsize) - var(--borderwidth))
+            border: none
+            resize: none
+            border-radius: 0px !important
+            width: 100%
+            background: none
+            font-family: $Poppins
+            color: var(--color)
+            font-size: inherit
+            font-size: 16px
+            padding: 0 var(--paddingleftright)
+            &:not(:placeholder-shown)
+                & ~ label
+                    font-size: var(--labelfontafter)
+                    color: var(--labelafter)
+                    top: calc(var(--labelfontafter) / -2)
+                    opacity: .7
+            &:focus
+                outline: none
+            &.valid
+                outline: none
+                & ~ label
+                    font-size: var(--labelfontafter)
+                    color: var(--labelafter)
+                    top: calc(var(--labelfontafter) / -2)
+                    background: var(--labelbackground)
+            &:not(.no-focus)
+                &:focus
+                    outline: none
+                    & ~ label
+                        font-size: var(--labelfontafter)
+                        color: var(--labelafter)
+                        top: calc(var(--labelfontafter) / -2)
+                        background: var(--labelbackground)
+                        opacity: .7
+            &[readonly]
+                caret-color: transparent
+
+        textarea
+            height: var(--textareaheight)
+            border: none
+            resize: none
+            border-radius: 0px !important
+            width: 100%
+            background: none
+            color: var(--color)
+            font-size: 14px
+            font-family: $Poppins
+            line-height: 1.2
+            cursor: initial
+            @include scrollbar(2px,none,$black,15px)
+            padding: 0 var(--paddingleftright)
+            padding-right: 15px
+            &:not(:placeholder-shown) ~ label
+                top: calc(var(--labelfontafter) / -2 - 6px)
+            &:focus,&.valid
+                outline: none
+                margin-top: 13px
+                height: calc(var(--textareaheight) - 13px)
+        &:has(.rgt-btn)
+            position: relative
+            input
+                padding-right: 3rem
+            .rgt-btn
+                position: absolute
+                top: 50%
+                translate: 0 -50%
+                right: 0
+                font-size: 13px
+                color: $primary
+                @include font(500)
+        .error
+            position: absolute
+            top: calc(100% + 2px)
+            left: 0
+            right: 0
+            text-align: left
+            line-height: normal
+            font-size: 12px
+            z-index: 1
+            @include font(500)
+            color: red
+        .btm-text
+            position: absolute
+            top: calc(100% + 5px)
+            left: 0
+            right: 0
+            text-align: left
+            line-height: normal
+            font-size: 12px
+            z-index: 1
+            @include font(500)
+            &.frgt-pswrd
+                text-align: right
+                color: $text
+                &:hover
+                    text-decoration: underline
+                    color: $primary
+            &.green-msg
+                color: $primary
+            &.red-msg
+                color: red
+                z-index: 1 !important
+        &.file-input
+            height: var(--inputsize)
+            input[type="file"]
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                width: 100%
+                height: 100%
+                opacity: 0
+                z-index: 4
+                cursor: pointer
+                &:not(:placeholder-shown) ~ label
+                    top: auto
+                    bottom: 10px
+                    font-size: var(--labelfontbefore)
+            .file-name
+                pointer-events: none
+                height: calc(var(--inputsize) - var(--borderwidth))
+                width: 100%
+                display: block
+                position: relative
+                --filename: 'Upload Resume*'
+                --filenameinitial: var(--filename)
+                --color: var(--text)
+                --background: none
+                --image: url(../../icon/link.svg) no-repeat
+                appearance: none
+                line-height: calc(var(--inputsize) - var(--borderwidth))
+                &::before,&::after
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    left: 0
+                    right: 0
+                &::before
+                    z-index: 2
+                    font-family: inherit
+                    font-size: inherit
+                    line-height: calc(var(--inputsize) - var(--borderwidth))
+                    padding-left: var(--paddingleftright)
+                    color: var(--color)
+                    width: 100%
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    background: none
+                &::after
+                    content: var(--filename)
+                    right: 0
+                    background: var(--image)
+                    background-repeat: no-repeat
+                    z-index: 1
+                    background-position: calc(100% - var(--paddingleftright,0)) 50%
+                    background-size: auto 50%
+        &.is-otp-input
+            display: flex
+            flex-direction: row-reverse
+            gap: 2rem
+            align-items: center
+            &:before,&::after
+                display: none
+            label
+                position: unset
+            .otp-fields-wrap
+                flex: 1
+                position: relative
+                input
+                    letter-spacing: 72px
+                    padding: 0 25px
+                    user-select: none !important
+            .otp-fields
+                flex: 1
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                z-index: 2
+                display: flex
+                pointer-events: none
+                gap: 1rem
+                max-width: 374px
+                margin-left: auto
+                margin-right: auto
+                span
+                    flex: 1
+                    display: block
+                    height: var(--inputsize)
+                    border: 1px solid #ccc
+                    border-radius: 5px
+    .submit-grp
+        &:not(.text-left)
+            text-align: center
+            margin-top: 23px
+
+select
+    height: var(--inputsize)
+    width: 100%
+    // border-bottom: 1px solid #fff
+    border-left: none
+    border-right: none
+    border-top: none
+    outline: none
+    color: #FFFFFFB2
+    font-family: $Poppins
+    background: transparent
+    padding: 10px 0px 6px 0px
+    font-size: 1rem
+    border-radius: 0
+    transition: all 0.4s
+    appearance: base-select
+    cursor: pointer
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 0px
+        transform: translateY(-50%)
+        width: 16px
+        height: 16px
+        background: url('../../icons/down-white.svg') no-repeat center center
+        background-size: contain
+    option
+        display: flex
+        align-items: center
+        gap: 15px
+        background: $white
+        border-bottom: 1px solid $gray
+        padding: 10px
+        font-size: 14px
+        transition: 0.5s
+        font-family: $Poppins
+        &:hover, &:focus
+            background: $primary
+            color: #FFF
+        &::checkmark
+            display: none
+    &::picker-icon
+        display: none
+    &:open::picker-icon
+        rotate: 180deg
+    selectedcontent
+        font-size: var(--labelfontbefore)
+        // padding-top: 10px
+        font-size: 16px
+        font-family: $Poppins
+
+::picker(select)
+    appearance: base-select
+    background: #FFFAF0
+    border: none
+    border-radius: 0px 0px 10px 10px
+    opacity: 0
+    transition: all 0.4s allow-discrete
+    &:popover-open
+        opacity: 1
+
+@starting-style
+    ::picker(select)
+        &:popover-open
+            opacity: 0
+
+.daterangepicker
+    font-family: $Fraunces !important
+    select
+        display: block
+        border-radius: 5px
+        color: $text
+        cursor: pointer !important
+        background: #fff6f6
+        border-color: #ccc
+        &:focus
+            outline: none
+    thead
+        position: relative
+    tr
+        &:has(.yearselect,.monthselect)
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            z-index: 1
+            display: flex
+            th
+                &:has(.yearselect,.monthselect)
+                    display: flex
+                    flex: 1
+                .yearselect,.monthselect
+                    flex: 1
+        & ~ tr
+            th
+                padding-top: 35px
+    option,td
+        &.disabled
+            text-decoration: none !important
+    td
+        &.active
+            background-color: $black !important
+    .drp-buttons
+        .btn
+            --height: 30px
+            padding: 0 15px !important
+            font-weight: 400 !important
+            font-size: 12px !important
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
+    border-radius: 50%
+    background: $black
+    border-color: $black
+    height: 17px
+    width: 17px
+    border: none !important
+    top: 50%
+    translate: 0 -50%
+    &:focus
+        outline: none
+.ui-slider-horizontal
+    height: 2px
+    border: none !important
+.ui-widget-content
+    background: #CECECE
+    border: none !important
+.ui-widget-header
+    background: $black
+
+.checkbox-full
+    @include checkbox-full
+
+.radio-full
+    @include radio-full
+
+.image-upload
+    position: relative
+    @include before(rgb(57 57 57 / 74%))
+    &::before
+        height: 30%
+        top: auto
+        background-size: 17px
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAApJJREFUWEftl81vDVEYxp9nOufMrZJUrUUiYkEXNIggJNJo0GCh3VrYWAhBIuEP6AohYkMitj4Si0bVAgkqKoRENJFIhKUgPtLU3HPvfXXGqNu6d+accetuzHLmfZ/zO+f9OO8QTX7Y5PXhBCAiBZRKa1Ohff8Rye+2G7MGEJE2GHMLwPoM8ftQaivJcRsIKwARaYcxdwCstBEF8BRKdZP8nGU/DUAmJhahpeUggBUAvCrnxQAWZonN+P4OwJuqdxUAz1Eun2Fr69tf76cAkl1GDu2OC7maf4BSS0h+iRx/AxjTA5FhV7Vc9uRmKnV3OkAY9oO8nEvQ1Umkn0FwdSZAH8grllqPIXIvTrZYhasAbASw2spfpI9BcC3PCUSldZhan6+1kBSL+wCcBDAnFSTnCYQQ6WIQjKWJSxh2gnwCIKhrV+cEskKwn1qfi0QlDHeCPApgebLIS3jeAH3/Rvy9WIxK+bQrQFoSjkOpeSRFSqVeVCqDNcU9bzt9f0hEfBjzDUChpp1zCMhBKrUj2d0IgHV1dveQWsetWsJwGGRPHQDHJCSPUKlTCUC0s7l1AD5R6wWxnTHHIDLgcgJpITgwKXw2AfgIoCMTIC0PnEMAXKTWexOAByk34gi13pDYXZq8C/Y0JgTAM2rdFQunJ+E2+v7NBOAFgE6XEKSXoef1TpXZT4jjSRmWAYwlZTiUJOAukNddyzCrD3xFpbKGhcKrjEa0DORoSqICf9mKD1HrCymt+ASAtjyteDfI+IayeEaTyyhquX48KZGb/sVlZMFmYVKzDI3ZApFo6Jz9h+ymUrejhapHsg4Y8xrA/FkmeA+llv4xksXlU38obQRT+lDaiBXyaFj9F+QRtvX5D9D0E/gBt9U9MPDrkusAAAAASUVORK5CYII=)
+    input
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 2
+        opacity: 0
+        appearance: none
+        cursor: pointer
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out"
+    -webkit-transition-delay: 9999s

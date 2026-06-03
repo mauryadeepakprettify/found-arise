@@ -1,0 +1,159 @@
+@import "../_common"
+
+footer
+    height: fit-contetn
+    .top
+        background: var(--background)
+        padding: 25px var(--containerfluid)
+        .container
+            .row
+                display: grid
+                grid-template-columns:  528px 1fr
+            .left
+                display: grid
+                grid-template-columns: 1fr 1fr
+                .col
+                    display: flex
+                    flex-wrap: 10px
+                    align-items: center
+                    &:not(:last-child)
+                        border-right: 1px solid var(--border)
+                        padding-right: 30px
+                    &:not(:first-child)
+                        padding-left: 30px
+                    figure
+                        width: 25px
+                        height: 25px
+                        margin-right: 16px
+                    figcaption
+                        display: flex
+                        flex-direction: column
+                        span
+                            font-family: $Poppins
+                            color: var(--text)
+                            text-transform: uppercase
+                            font-size: 12px
+                            @include font(500)
+                          
+                        a
+                            font-family: $Poppins
+                            color: var(--text)      
+            .right
+                display: flex
+                justify-content: end
+                align-items: center
+                gap: 16px
+
+    .wrap
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            background: $secondary
+            opacity: .95
+            z-index: 1
+        video
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+            position: absolute
+            inset: 0
+            z-index: 0
+        .middle
+            z-index: 2
+            position: relative
+            padding: 52px var(--containerfluid) 66px
+            .container
+                display: grid
+                grid-template-columns: 1fr 100px 295px
+                column-gap: 100px
+                .colA
+                    .logo
+                        max-width: 264px
+                    .social
+                        margin-top: 30px
+                        display: flex
+                        gap: 10px
+                        align-items: center
+                        li
+                            flex-shrink: 0
+                            a
+                                width: 43px
+                                height: 43px
+                                border: 1px solid $white
+                                border-radius: 50px
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                                transition: .5s ease
+                                img
+                                    width: 18px
+                                    height: 18px
+                                    object-fit: contain
+                                    fill: $white
+                                &:hover
+                                    background: $primary
+                                    border-color: $primary
+
+
+
+                .colB, .colC
+                    h5
+                        text-transform: uppercase
+                        font-family: $Poppins
+                        color: $white
+                        font-size: 14px
+                        @include font(400)
+                        margin-bottom: 16px
+                    ul
+                        li
+                            a
+                                display: inline-block
+                                font-size: 14px
+                                font-family: $Poppins
+                                color: #FFFFFFB2
+                                transition: .4s ease
+                                &:not(:last-child)
+                                    margin-bottom: 18px
+                                &:hover
+                                    transform: translateX(5px)
+
+                .colC
+                    .adrs
+                        display: flex
+                        gap: 20px
+                        .icon
+                            flex-shrink: 0
+                        figcaption
+                            p
+                                color: #FFFFFFB2
+                            .direction
+                                color: white
+                                display: flex
+                                margin-top: 8px
+                                align-items: center
+                                gap: 12px
+                                transition: all .5s ease
+                                &:hover
+                                    transform: translateX(5px)
+
+                        
+
+        .bottom
+            padding: 29px var(--containerfluid)
+            z-index: 2
+            border-top: 1px solid #FFFFFF33
+            position: relative
+            .container
+                p
+                    text-align: center
+                    color: #FFFFFF99
+                    font-size: 14px
+                    @include media(500)
+                    img
+                        height: 23px
+                        width: 65px
+                        vertical-align: middle
+            

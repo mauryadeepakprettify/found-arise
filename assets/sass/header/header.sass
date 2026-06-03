@@ -1,0 +1,44 @@
+@import "../_common"
+
+header
+    position: fixed
+    left: 0
+    right: 0
+    z-index: 5
+    padding: var(--headerpadding) var(--containerfluid)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: var(--headerheight)
+    &::before
+        position: absolute
+        content: ""
+        height: 0
+        background: $secondary
+        left: 0
+        right: 0
+        top: 0
+        z-index: 1
+        transition: all .5s ease
+    &.scrolled
+        &::before
+            height: 100%
+    .logo
+        z-index: 2
+        
+    nav
+        z-index: 2
+        display: flex
+        align-items: center
+        gap: 38px
+        ul
+            display: flex
+            gap: 38px
+            li
+                a
+                    text-transform: uppercase
+                    @include font(500)
+                    color: white
+                    font-size: 14px
+                    font-family: $Poppins
+            
