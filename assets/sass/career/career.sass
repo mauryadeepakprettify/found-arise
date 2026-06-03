@@ -218,3 +218,127 @@
                             margin-top: 16px
                             color: $text
                             font-family: $Poppins
+
+
+.carrer-detail-banner   
+    height: calc(549px - var(--headerheight))
+    overflow: hidden
+    padding-top: var(--headerheight)
+    position: relative
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        opacity: .2
+        position: absolute
+        inset: 0
+    .content
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%
+        h1
+            color: $black
+            font-size: 48px
+            line-height: 55px
+            font-family: $Fraunces
+            @include font(300)
+        
+.career-detail-seca
+    display: grid
+    grid-template-columns: 368px 1fr
+    .left
+        padding: 50px
+        background: rgba(250, 250, 250, 1)
+        h5
+            font-size: 16px
+            line-height: 24px
+            font-family: $Poppins
+            @include font(500)
+            margin-bottom: 16px
+        h6
+            font-size: 14px
+            line-height: 24px
+            @include font(500)
+            font-family: $Poppins
+        .social
+            margin-top: 16px
+            li
+                display: flex
+                align-items: center
+                gap: 10px
+                &:not(:last-child)
+                    margin-bottom: 10px
+                a
+                    color: $text
+                    
+        .vacancy-details
+            margin-top: 40px
+            h5
+                margin-bottom: 15px
+            ul
+                li
+                    display: flex
+                    align-items: center
+                    gap: 10px
+                    color: $text
+                    font-size: 14px
+
+                    &:not(:last-child)
+                        margin-bottom: 14px
+            
+        .action
+            margin-top: 30px
+            display: flex
+            flex-direction: column
+            gap: 14px
+            .btn
+                width: 100%
+                justify-content: center
+    .right           
+        padding: 50px
+
+
+.career-detail-secb
+    padding: 60px var(--containerfluid)
+    .container
+        .heading
+            position: relative
+            .swiper-nav
+                position: absolute
+                top: 50%
+                right: 0
+                transform: translateY(-50%)
+        .content
+            margin-top: 40px
+            .career-slider
+                overflow: hidden
+                padding: 24px 0px
+                .swiper-wrapper
+                    .swiper-slide
+                        .job-card
+                            padding: 32px
+                            box-shadow: 0px 8px 24px 0px rgba(149, 157, 165, 0.2)
+                            border-radius: 10px
+                            h4
+                                font-family: $Poppins
+                                @include font(500)
+                                margin-bottom: 20px
+                            ul
+                                li
+                                    display: flex
+                                    align-items: center
+                                    gap: 10px
+                                    font-size: 12px
+                                    color: $primary
+                                    @include font(500)
+                                    &:not(:last-child)
+                                        margin-bottom: 10px
+                                    
+                            .btn
+                                margin-top: 20px
+
+
+
+
+

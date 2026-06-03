@@ -96,3 +96,31 @@ const swiperJ = new Swiper(".secj-slider", {
   },
   speed: 800,
 });
+
+
+const careerSlider = new Swiper(".career-slider", {
+  loop: true,
+  speed: 400,
+  spaceBetween: 16,
+  slidesPerView: 1.2,
+
+  navigation: {
+    nextEl: ".career-button-next",
+    prevEl: ".career-button-prev",
+  },
+
+  scrollbar: {
+    el: ".swiperA-scrollbar",
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2.3,
+      spaceBetween: 16,
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 16,
+    },
+  },
+});
